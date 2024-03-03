@@ -1,25 +1,10 @@
 function checkForSpam(message) {
-    const firstName = "spam";
-    const secondName = "sale";
-    const thirdName = "[SPAM]"
-    if ((message.toLowerCase()).includes(firstName)) {
-        return true;
-    }
-    else if
-        ((message.toLowerCase()).includes(secondName)) {
-        return true;
-    }
-    
-    else if (message.includes(thirdName)) {
-        return true;
-    }
-    else {
-        return false;
-    }
+const normalizedMessage = message.toLowerCase();
+    const forbiddenWord1 = "spam";
+    const forbiddenWord2 = "sale";
 
-    }  
-
-    
+    return normalizedMessage.includes(forbiddenWord1) || normalizedMessage.includes(forbiddenWord2);
+}
 
 console.log(checkForSpam("Latest technology news")); // false
 console.log(checkForSpam("JavaScript weekly newsletter")); // false
